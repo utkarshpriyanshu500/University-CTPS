@@ -1,42 +1,54 @@
-/* WAP to accept marks of five subjects, calculate percentage, and print grades */
-
 #include <stdio.h>
 
 int main() {
 
-    int english;
-    printf("ENTER THE marks for english : ");
-    scanf("%d", &english);
+    float english, maths, physics, chemistry, cs;
+    float total, percentage;
 
-    int maths;
-    printf("ENTER THE marks for maths : ");
-    scanf("%d", &maths);
+    printf("Enter marks for English: ");
+    scanf("%f", &english);
 
-    int physics;
-    printf("ENTER THE marks for physics : ");
-    scanf("%d", &physics);
+    printf("Enter marks for Maths: ");
+    scanf("%f", &maths);
 
-    int chemistry;
-    printf("ENTER THE marks for chemistry : ");
-    scanf("%d", &chemistry);
+    printf("Enter marks for Physics: ");
+    scanf("%f", &physics);
 
-    int cs;
-    printf("ENTER THE marks for cs : ");
-    scanf("%d", &cs);
+    printf("Enter marks for Chemistry: ");
+    scanf("%f", &chemistry);
 
-    int sum;
-    sum = english + maths + physics + chemistry + cs;
+    printf("Enter marks for CS: ");
+    scanf("%f", &cs);
 
-    if(sum > 500){
-        printf("invalid input");
+    total = english + maths + physics + chemistry + cs;
+    percentage = total / 5;
+
+    printf("Total Marks: %f / 500\n", total);
+    printf("Percentage: %f \n", percentage);
+
+    if (percentage >= 90) {
+        printf("Grade: A+\n");
+    } 
+    
+    else if (percentage >= 80) {
+        printf("Grade: A\n");
+    } 
+    
+    else if (percentage >= 70) {
+        printf("Grade: B\n");
+    } 
+    
+    else if (percentage >= 60) {
+        printf("Grade: C\n");
     }
 
-    else if (sum < 500){
-        int percentage;
-        percentage = (sum / 500) * 100;
-        printf(" the percentage is : %d \n ", percentage);
+    else if (percentage >= 50) {
+        printf("Grade: D\n");
+    } 
+
+    else {
+        printf("Grade: F\n");
     }
 
-   
     return 0;
 }
